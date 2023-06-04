@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name SerialMouseBlasterPCB)(type KiCad)(uri ${KIPRJMOD}/SerialMouseBlasterPCB.pretty)(options "")(descr ""))
+)

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name SerialMouseBlasterPCB)(type Legacy)(uri ${KIPRJMOD}/SerialMouseBlasterPCB.lib)(options "")(descr ""))
+  (lib (name SerialMouseBlasterPCB-rescue)(type Legacy)(uri ${KIPRJMOD}/SerialMouseBlasterPCB-rescue.lib)(options "")(descr ""))
+)
