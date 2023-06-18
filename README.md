@@ -53,6 +53,7 @@ Female connector looking at the holes:
 
 # Videos
 - For a discussion/explanation of the circuit: https://www.youtube.com/watch?v=cGvVPzlRPjM
+- Assembly video rev0.1: https://www.youtube.com/watch?v=YjD63UplQ3c
 
 
 # Bill of materials
