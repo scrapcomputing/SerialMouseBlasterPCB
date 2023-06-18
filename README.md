@@ -16,6 +16,54 @@ The SerialMouseBlaster has two jobs:
 
 The end result is an adapter board that converts a USB optical mouse to a serial one with no external power.
 
+# Which mouse can I use?
+
+Short answer: You have to measure it first, but a relatively modern mouse with a < 5mA consumption on idle should work after the resistor mod.
+
+The serial port provides very little power, up to 15mA in total at 5V.
+Currently the Pico consumes about half of it and the rest of the circuitry about another 15-20%. So the we only have about 5mA to spare for the USB mouse. So a good mouse candidate is one that consumes up to 5mA.
+
+The problem though is that most USB optical mice consume much more than this.
+But most of the power is usually consumed by the LED (usually red) which illuminates the surface.
+Luckily the mouse camera can still work even with a much dimmer LED.
+So we can reduce the power consumption by adding a resistor in series with the LED.
+A good resistor values is usually around 1K Ohms.
+Some mice may even work with higher resistor values, but beyond some value the camera can no longer see the surface and the mouse will not register mouse movement.
+So for best results use the largest resistor value you can without affecting the functionality of the mouse.
+
+Some mice already have an SMD resistor in-series with the LED (see image below of the Microsoft Basic Optical Mouse v2.0).
+This resistor is usually a very low value.
+For a cleaner mod, you can simply replace this resistor with another SMD one of much higher value.
+
+<img src='img/resistor_mod_in_series_resistor.jpg'>
+
+You can usually tell if a mouse is low-power enough by simply measuring its idle current, without the resistor mod.
+If it is under 5mA, then it has a good chance of working well with a mod.
+If not, then the chances are that it will consume too much power even with the mod.
+
+Please note that a typical optical USB mouse will consume several times higher power when you move it as the LED becomes a lot brighter than when it is not moving.
+
+## List of mice that work:
+ Brand     |  Model                  | Idle Current | Max Current | Mod Resistor |Modded Idle | Modded Max
+-----------|-------------------------|--------------|-------------|--------------|------------|-----------
+Microsoft  |Basic Optical Mouse v2.0 | 3.5mA        | ~15mA       |  2.2K        | 2.7mA      | 5.4mA
+
+
+## List of mice that might work, but most probably won't:
+ Brand     |  Model                  | Idle Current | Max Current | Mod Resistor |Modded Idle | Modded Max
+-----------|-------------------------|--------------|-------------|--------------|------------|-----------
+Logitech   | B100                    | 8.4mA        | ~24mA       |  1K          | 6.4mA      | 8.6mA
+
+## List of mice that consume too much power (mostly very early optical mice):
+ Brand     |  Model                   | Idle Current | Max Current |
+-----------|--------------------------|--------------|-------------|
+Dell       | M-UVDEL1                 | 20.7mA       | 59.2mA      |
+Apple      | A1152                    | 26.7mA       | 69.7mA      |
+Microsoft  | Basic Optical Mouse      | 29.4mA       | 54.3mA      |
+Microsoft  | Wheel Mouse Optical 1.1A | 44.1mA       | 61.4mA      |
+
+> **Note**
+> Please help me populate these tables. Feel free to reach out or send out a pull request if you measured your mouse and you want to share your numbers.
 
 # How does it work
 
