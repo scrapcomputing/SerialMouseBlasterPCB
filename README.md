@@ -49,7 +49,7 @@ Please note that a typical optical USB mouse will consume several times higher p
 Microsoft  |Basic Optical Mouse v2.0 | 3.5mA        | ~15mA       |  2.2K        | 2.7mA      | 5.4mA
 
 
-## List of mice that might work, but most probably won't:
+## List of mice that might work:
  Brand     |  Model                  | Idle Current | Max Current | Mod Resistor |Modded Idle | Modded Max
 -----------|-------------------------|--------------|-------------|--------------|------------|-----------
 Logitech   | B100                    | 8.4mA        | ~24mA       |  1K          | 6.4mA      | 8.6mA
@@ -110,29 +110,27 @@ Gerber files are published in the releases: https://github.com/scrapcomputing/Se
 
 The firmware is available here: https://github.com/scrapcomputing/SerialMouseBlasterFirmware
 
-  Name  | Item                       |  Value   |     Package            | # | Description
---------|----------------------------|----------|------------------------|---|--------------------------------------------------------
- U3     | Raspberry Pi Pico          |          |                        | 1 |
-R8,R9   | Resistor                   |   1M     | SMD 1206               | 2 |
- R4     | Resistor                   | 100K     | SMD 1206               | 1 |
- R2     | Resistor                   |  47K     | SMD 1206               | 1 |
-R5,R6,R7| Resistor                   |  22K     | SMD 1206               | 3 |
- R1     | Resistor                   | 4.7K     | SMD 1206               | 1 |
- R3     | Resistor                   |   1K     | SMD 1206               | 1 |
- U2     | IC LM358                   |          | DIP8                   | 1 | Op-Amp
- U1     | IC 7555                    |          | DIP8                   | 1 | CMOS Timer
-U1,U2   | DIP 8 IC Sockets           |          | DIP8                   | 2 | Sockets for the ICs
-C4,C6   | Electrolytic Capacitor 25V | 470uF    | Through-hole Radial    | 2 | 16V caps should also work
- C8     | Electrolytic Capacitor 6.3V| 100uF    | Through-hole Radial    | 1 |
- C3     | Electrolytic Capacitor 25V |  10uF    | Through-hole Radial    | 1 | 
-C5,C7   | Ceramic Capacitor      50V |   1uF    | SMD 1206               | 2 |
- C1     | Ceramic Capacitor      50V | 0.1uF    | SMD 1206               | 1 |
- C2     | Ceramic Capacitor      50V |  10nF    | SMD 1206               | 1 |
- D9     | Diode 1N4001               |          | Through-Hole           | 1 | Generic diode
- D11    | Zener Diode 1N5231         |  5.1V    | Through-hole Axial     | 1 |
-D1,D2,D3,D4,D5,D6,D7,D8,D10 | Schottky Diode 20V | 1N5817   | Through-hole Axial     | 9 | 
- N/A    | Male Header 2.54mm pitch   | 01x09    | Through-hole 2.54mm    | 2 | Headers for attaching the Pico to the PCB
- J3     | Male Header 2.54mm pitch   | 01x03    | Through-hole 2.54mm    | 1 | Optional (for serial debugging)
+Reference      | Quantity| Value    | Footprint
+---------------|---------|----------|----------
+C1             | 1       |     100nF| Capacitor SMD 1206
+C2             | 1       |      10nF| Capacitor SMD 1206
+C3 C4 C6 C8    | 4       |      10uF| Capacitor SMD 1206
+C7             | 1       |       1uF| Capacitor SMD 1206
+D11            | 1       |BZX84-C5V1| Diode SMD SOT-23_ANK
+D1 D2 D3 D4 D5 | 5       |  BAS40-04| Package SMD SOT-23
+Q1             | 1       |   MMBTA92| Package SMD SOT-23
+R1             | 1       |      4.7K| Resistor SMD 1206
+R2             | 1       |       47K| Resistor SMD 1206
+R3             | 1       |        1K| Resistor SMD 1206
+R4             | 1       |      100K| Resistor SMD 1206
+R5 R6 R7       | 3       |       22K| Resistor SMD 1206
+R8             | 1       |        1K| Capacitor SMD 1206
+U1             | 1       | ICM7555xP| Package SO-8 5.3x6.2mm P1.27mm
+U2             | 1       |     LM358| Package SO-8 5.3x6.2mm P1.27mm
+U3             | 1       |Raspberry Pi Pico| Raspberry Pi Pico
+J1             | 1       |Conn_01x05| (Optional) Connector Male PinHeader 1x05 P2.54mm Vertical
+J2             | 1       |Conn_01x04| (Optional) Connector Male PinHeader 1x04 P2.54mm Vertical
+J3             | 1       |Conn_01x03| (Optional) Connector Male PinHeader 1x03 P2.54mm Vertical
 
 # Changelist
 - Rev0.1 : Initial revision (not released)
