@@ -5,23 +5,23 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Serial Mouse Blaster PCB"
-Date "2023-06-19"
-Rev "rev0.3"
+Date "2023-06-22"
+Rev "rev0.4"
 Comp "Scrap Computing"
 Comment1 ""
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 1600 3850 0    50   ~ 0
+Text Label 900  3850 0    50   ~ 0
 RTS
-Text Label 1600 3650 0    50   ~ 0
+Text Label 900  3650 0    50   ~ 0
 TX
-Text Label 1600 3750 0    50   ~ 0
+Text Label 900  3750 0    50   ~ 0
 RX
-Text Label 1600 3950 0    50   ~ 0
+Text Label 900  3950 0    50   ~ 0
 DTR
-Text Label 1600 4050 0    50   ~ 0
+Text Label 900  4050 0    50   ~ 0
 GND
 Text Label 6400 2400 0    50   ~ 0
 PWR+
@@ -62,17 +62,6 @@ F 3 "~" H 4900 3000 50  0001 C CNN
 	1    4900 3000
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R R4
-U 1 1 6484D5CC
-P 3600 5600
-F 0 "R4" V 3393 5600 50  0000 C CNN
-F 1 "100K" V 3484 5600 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 3530 5600 50  0001 C CNN
-F 3 "~" H 3600 5600 50  0001 C CNN
-	1    3600 5600
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	3250 3600 3250 4800
 Wire Wire Line
@@ -102,20 +91,12 @@ F 3 "http://www.intersil.com/content/dam/Intersil/documents/icm7/icm7555-56.pdf"
 	1    2450 1350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1950 3650 1950 1900
-Connection ~ 1950 3650
-Wire Wire Line
-	1950 3650 3550 3650
-Connection ~ 2000 4050
-Wire Wire Line
-	2000 4050 2750 4050
 $Comp
 L Device:R R2
 U 1 1 64CDB3EB
 P 1700 1150
 F 0 "R2" V 1493 1150 50  0000 C CNN
-F 1 "47K" V 1584 1150 50  0000 C CNN
+F 1 "22K" V 1584 1150 50  0000 C CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1630 1150 50  0001 C CNN
 F 3 "~" H 1700 1150 50  0001 C CNN
 	1    1700 1150
@@ -126,7 +107,7 @@ L Device:R R1
 U 1 1 64CDB988
 P 1700 850
 F 0 "R1" V 1493 850 50  0000 C CNN
-F 1 "4.7K" V 1584 850 50  0000 C CNN
+F 1 "1K" V 1584 850 50  0000 C CNN
 F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1630 850 50  0001 C CNN
 F 3 "~" H 1700 850 50  0001 C CNN
 	1    1700 850 
@@ -134,13 +115,9 @@ F 3 "~" H 1700 850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2450 1750 2450 1900
-Wire Wire Line
-	2450 1900 1950 1900
-Connection ~ 1950 1900
 Connection ~ 2450 1900
 Wire Wire Line
 	2450 1900 2950 1900
-Connection ~ 2950 1900
 Wire Wire Line
 	2950 1550 2950 1600
 Wire Wire Line
@@ -152,8 +129,6 @@ Wire Wire Line
 	1650 1350 1650 1450
 Wire Wire Line
 	1650 1750 1650 1900
-Wire Wire Line
-	1650 1900 1950 1900
 Wire Wire Line
 	1650 1350 1950 1350
 Wire Wire Line
@@ -180,20 +155,11 @@ Wire Wire Line
 	1900 1150 1950 1150
 Connection ~ 2950 1550
 Wire Wire Line
-	2950 1900 3550 1900
-Wire Wire Line
 	1850 850  2450 850 
 Wire Wire Line
 	2450 950  2450 850 
 Connection ~ 2450 850 
-Wire Wire Line
-	2000 4050 2000 2200
-Wire Wire Line
-	2000 2200 3550 2200
 Connection ~ 2000 2200
-Wire Wire Line
-	3550 2200 4050 2200
-Connection ~ 3550 2200
 Wire Wire Line
 	4050 850  4050 2200
 Wire Wire Line
@@ -333,27 +299,17 @@ Wire Wire Line
 $Comp
 L Connector_Generic:Conn_01x05 J1
 U 1 1 6488BF52
-P 1250 3850
-F 0 "J1" H 1168 4267 50  0000 C CNN
-F 1 "Conn_01x05" H 1168 4176 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 1250 3850 50  0001 C CNN
-F 3 "~" H 1250 3850 50  0001 C CNN
-	1    1250 3850
+P 700 3850
+F 0 "J1" H 618 4267 50  0000 C CNN
+F 1 "Conn_01x05" H 618 4176 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 700 3850 50  0001 C CNN
+F 3 "~" H 700 3850 50  0001 C CNN
+	1    700  3850
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	1450 4050 2000 4050
-Wire Wire Line
-	1450 3950 2400 3950
-Wire Wire Line
-	1450 3850 2100 3850
 Connection ~ 2100 3850
 Wire Wire Line
-	1450 3750 1850 3750
-Wire Wire Line
 	1850 3750 1850 5500
-Wire Wire Line
-	1450 3650 1950 3650
 $Comp
 L Connector:Conn_01x04_Male J2
 U 1 1 64866FCC
@@ -539,8 +495,6 @@ Wire Wire Line
 Wire Wire Line
 	5700 4800 7200 4800
 Wire Wire Line
-	3750 5600 6950 5600
-Wire Wire Line
 	7200 5500 6250 5500
 $Comp
 L Transistor_BJT:MMBTA92 Q1
@@ -580,7 +534,7 @@ U 1 1 6494F328
 P 6000 5100
 F 0 "R8" V 5793 5100 50  0000 C CNN
 F 1 "1K" V 5884 5100 50  0000 C CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" V 5930 5100 50  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 5930 5100 50  0001 C CNN
 F 3 "~" H 6000 5100 50  0001 C CNN
 	1    6000 5100
 	0    1    1    0   
@@ -599,18 +553,7 @@ F 3 "~" H 2950 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C6
-U 1 1 64D7B06C
-P 3550 2050
-F 0 "C6" H 3432 2004 50  0000 R CNN
-F 1 "10uF" H 3432 2095 50  0000 R CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" H 3588 1900 50  0001 C CNN
-F 3 "~" H 3550 2050 50  0001 C CNN
-	1    3550 2050
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:C C3
+L Device:CP C3
 U 1 1 64CC957E
 P 3100 1150
 F 0 "C3" V 2845 1150 50  0000 C CNN
@@ -625,14 +568,14 @@ L Device:C C1
 U 1 1 64CDA703
 P 1650 1600
 F 0 "C1" H 1765 1646 50  0000 L CNN
-F 1 "100nF" H 1765 1555 50  0000 L CNN
+F 1 "1uF" H 1765 1555 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" H 1688 1450 50  0001 C CNN
 F 3 "~" H 1650 1600 50  0001 C CNN
 	1    1650 1600
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C4
+L Device:CP C4
 U 1 1 64762B46
 P 3250 3450
 F 0 "C4" H 3368 3496 50  0000 L CNN
@@ -654,7 +597,7 @@ F 3 "~" H 3550 3350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C8
+L Device:CP C8
 U 1 1 647E80AA
 P 6250 5350
 F 0 "C8" H 6368 5396 50  0000 L CNN
@@ -663,5 +606,82 @@ F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" H 6288 5200 50  
 F 3 "~" H 6250 5350 50  0001 C CNN
 	1    6250 5350
 	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:BAS40-04 D6
+U 1 1 6493E745
+P 1900 3200
+F 0 "D6" V 1946 3388 50  0000 L CNN
+F 1 "BAS40-04" V 1855 3388 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 1650 3500 50  0001 L CNN
+F 3 "http://www.vishay.com/docs/85701/bas40v.pdf" H 1780 3300 50  0001 C CNN
+	1    1900 3200
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	900  3750 1850 3750
+Wire Wire Line
+	900  3850 2100 3850
+Wire Wire Line
+	900  3950 2400 3950
+Connection ~ 1650 1900
+Wire Wire Line
+	1650 1900 2450 1900
+Wire Wire Line
+	2000 2200 1450 2200
+Wire Wire Line
+	1800 3200 1800 3650
+Connection ~ 1800 3650
+Wire Wire Line
+	1800 3650 3550 3650
+Wire Wire Line
+	2000 2900 2000 2400
+Wire Wire Line
+	2000 2400 2300 2400
+Connection ~ 2300 2400
+Wire Wire Line
+	2000 2200 4050 2200
+Wire Wire Line
+	900  3650 1800 3650
+Wire Wire Line
+	2000 3500 1150 3500
+Wire Wire Line
+	1150 1900 1650 1900
+Connection ~ 1450 4050
+Wire Wire Line
+	1450 4050 2750 4050
+Wire Wire Line
+	900  4050 1450 4050
+Connection ~ 1450 2200
+Connection ~ 1150 2200
+Wire Wire Line
+	1150 2200 1150 1900
+Wire Wire Line
+	1150 2200 1150 3500
+Wire Wire Line
+	1450 2200 1450 4050
+$Comp
+L Device:CP C6
+U 1 1 64D7B06C
+P 1300 2200
+F 0 "C6" H 1182 2154 50  0000 R CNN
+F 1 "10uF" H 1182 2245 50  0000 R CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" H 1338 2050 50  0001 C CNN
+F 3 "~" H 1300 2200 50  0001 C CNN
+	1    1300 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3750 5600 6950 5600
+$Comp
+L Device:R R4
+U 1 1 6484D5CC
+P 3600 5600
+F 0 "R4" V 3393 5600 50  0000 C CNN
+F 1 "1K" V 3484 5600 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 3530 5600 50  0001 C CNN
+F 3 "~" H 3600 5600 50  0001 C CNN
+	1    3600 5600
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC

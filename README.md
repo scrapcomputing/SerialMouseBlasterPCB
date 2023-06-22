@@ -3,10 +3,13 @@
 A PCB used for modding a modern optical USB mouse and converting it into a Serial mouse.
 
 <img src='img/SerialMouseBlaster_PCB_front.jpg' height=240>
+<img src='img/SerialMouseBlaster_PCB_back.jpg' height=240>
 
 This is based on a Raspberry Pi Pico running the SerialMouseBlaster [firmware](https://github.com/scrapcomputing/SerialMouseBlasterFirmware).
 
 <img src='img/mouse_with_SerialMouseBlaster.jpg' height=480>
+
+<img src='img/schematic.png' width=320 height=200>
 
 # What does it do
 
@@ -47,11 +50,6 @@ Please note that a typical optical USB mouse will consume several times higher p
  Brand     |  Model                  | Idle Current | Max Current | Mod Resistor |Modded Idle | Modded Max
 -----------|-------------------------|--------------|-------------|--------------|------------|-----------
 Microsoft  |Basic Optical Mouse v2.0 | 3.5mA        | ~15mA       |  2.2K        | 2.7mA      | 5.4mA
-
-
-## List of mice that might work:
- Brand     |  Model                  | Idle Current | Max Current | Mod Resistor |Modded Idle | Modded Max
------------|-------------------------|--------------|-------------|--------------|------------|-----------
 Logitech   | B100                    | 8.4mA        | ~24mA       |  1K          | 6.4mA      | 8.6mA
 
 ## List of mice that consume too much power (mostly very early optical mice):
@@ -110,28 +108,25 @@ Gerber files are published in the releases: https://github.com/scrapcomputing/Se
 
 The firmware is available here: https://github.com/scrapcomputing/SerialMouseBlasterFirmware
 
-Reference      | Quantity| Value    | Footprint
----------------|---------|----------|----------
-C1             | 1       |     100nF| Capacitor SMD 1206
-C2             | 1       |      10nF| Capacitor SMD 1206
-C3 C4 C6 C8    | 4       |      10uF| Capacitor SMD 1206
-C7             | 1       |       1uF| Capacitor SMD 1206
-D11            | 1       |BZX84-C5V1| Diode SMD SOT-23_ANK
-D1 D2 D3 D4 D5 | 5       |  BAS40-04| Package SMD SOT-23
-Q1             | 1       |   MMBTA92| Package SMD SOT-23
-R1             | 1       |      4.7K| Resistor SMD 1206
-R2             | 1       |       47K| Resistor SMD 1206
-R3             | 1       |        1K| Resistor SMD 1206
-R4             | 1       |      100K| Resistor SMD 1206
-R5 R6 R7       | 3       |       22K| Resistor SMD 1206
-R8             | 1       |        1K| Capacitor SMD 1206
-U1             | 1       | ICM7555xP| Package SO-8 5.3x6.2mm P1.27mm
-U2             | 1       |     LM358| Package SO-8 5.3x6.2mm P1.27mm
-U3             | 1       |Raspberry Pi Pico| Raspberry Pi Pico
-J1             | 1       |Conn_01x05| (Optional) Connector Male PinHeader 1x05 P2.54mm Vertical
-J2             | 1       |Conn_01x04| (Optional) Connector Male PinHeader 1x04 P2.54mm Vertical
-J3             | 1       |Conn_01x03| (Optional) Connector Male PinHeader 1x03 P2.54mm Vertical
+Reference| Quantity| Value| Footprint | Details
+---------|---------|------|-----------|--------
+C1 C7 |2|1uF|Capacitor SMD|C 1206 3216Metric Pad1.33x1.80mm
+C2 |1|10nF|Capacitor SMD|C 1206 3216Metric Pad1.33x1.80mm
+C3 C4 C6 C8 |4|10uF|Capacitor SMD|C 1206 3216Metric Pad1.33x1.80mm
+D11 |1|BZX84-C5V1|Diode SMD|D SOT-23 ANK
+D1 D2 D3 D4 D5 D6 |6|BAS40-04|Package TO SOT SMD|SOT-23
+J1 |1|Conn 01x05|Connector PinHeader 2.54mm|PinHeader 1x05 P2.54mm Vertical
+J2 |1|Conn 01x04 Male|Connector PinHeader 2.54mm|PinHeader 1x04 P2.54mm Vertical
+J3 |1|Conn 01x03 Male|Connector PinHeader 2.54mm|PinHeader 1x03 P2.54mm Vertical
+Q1 |1|MMBTA92|Package TO SOT SMD|SOT-23
+R1 R3 R4 R8 |4|1K|Resistor SMD|R 1206 3216Metric Pad1.30x1.75mm
+R2 R5 R6 R7 |4|22K|Resistor SMD|R 1206 3216Metric Pad1.30x1.75mm
+U1 |1|ICM7555xP|Package SO|SO-8 5.3x6.2mm P1.27mm
+U2 |1|LM358|Package SO|SO-8 5.3x6.2mm P1.27mm
+U3 |1|RaspberryPi Pico| N/A | Raspberry Pi Pico
 
 # Changelist
-- Rev0.1 : Initial revision (not released)
+- Rev0.4 : Handles Tx with positive voltage, adds protection diode for 555.
+- Rev0.3 : First SMD only revision.
 - Rev0.2 : Initial release. Fixes minor issues of Rev0.1.
+- Rev0.1 : Initial revision (not released)
